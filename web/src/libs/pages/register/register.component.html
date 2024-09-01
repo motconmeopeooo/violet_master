@@ -1,0 +1,85 @@
+<div class="wrapper">
+  <div class="inner">
+    <div class="image-holder">
+      <img src="assets/img/registration-form-1.jpg" alt="" />
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h3>Registration Form</h3>
+      <div class="form-group">
+        <input
+          formControlName="firstName"
+          type="text"
+          placeholder="First Name"
+          class="form-control"
+        />
+        <input
+          formControlName="lastName"
+          type="text"
+          placeholder="Last Name"
+          class="form-control"
+        />
+      </div>
+      <div class="form-wrapper">
+        <input
+          formControlName="username"
+          type="text"
+          placeholder="Username"
+          class="form-control"
+        />
+        <i class="zmdi zmdi-account"></i>
+        <span
+          class="text-xs text-red-500"
+          *ngIf="this.form.controls.username.status === 'INVALID'
+          &&
+          !this.form.controls.username.errors?.['required']"
+        >
+          Username include letters and numbers, at least 6 letter
+        </span>
+      </div>
+      <div class="form-wrapper">
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="Email Address"
+          class="form-control"
+        />
+        <i class="zmdi zmdi-email"></i>
+        <span
+          class="text-xs text-red-500"
+          *ngIf="this.form.controls.email.status === 'INVALID'
+          &&
+          !this.form.controls.email.errors?.['required']"
+        >
+          Email is invalid
+        </span>
+      </div>
+      <div class="form-wrapper">
+        <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+      </div>
+      <div class="form-wrapper">
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="Password"
+          class="form-control"
+        />
+        <i class="zmdi zmdi-lock"></i>
+        <span
+          class="text-xs text-red-500"
+          *ngIf="this.form.controls.password.status === 'INVALID'
+          &&
+          !this.form.controls.password.errors?.['required']"
+        >
+          Password at least eight characters, one uppercase letter, one number
+        </span>
+      </div>
+      <span class="text-xs text-red-500" *ngIf="isError">
+        Email or username existed
+      </span>
+      <button [disabled]="form.invalid">
+        Register
+        <i class="zmdi zmdi-arrow-right"></i>
+      </button>
+    </form>
+  </div>
+</div>

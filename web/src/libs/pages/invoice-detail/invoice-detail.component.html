@@ -1,0 +1,94 @@
+<!-- Page Add Section Begin -->
+<section class="page-add cart-page-add">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="page-breadcrumb">
+          <h2>Invoice<span>.</span></h2>
+          <a href="#">Home</a>
+          <a href="#">Dresses</a>
+          <a class="active" href="#">Night Dresses</a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <img src="assets/img/add.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Page Add Section End -->
+
+<ng-container *ngIf="!isLoading; else elseTemplate"> </ng-container>
+<ng-template #elseTemplate>
+  <div class="w-full flex items-center justify-center h-96 max-h-full">
+    <app-loading></app-loading>
+  </div>
+</ng-template>
+
+<!-- Cart Page Section Begin -->
+<div class="cart-page" *ngIf="invoice$ | async as invoice">
+  <div class="container">
+    <div class="cart-table">
+      <table>
+        <thead>
+          <tr>
+            <th class="product-h">Product</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th class="quan">Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of invoice.products">
+            <td class="product-col">
+              <img [src]="product.image" alt="" />
+              <div class="p-title">
+                <h5>{{ product.name }}</h5>
+              </div>
+            </td>
+            <td class="price-col">{{ product.size }}</td>
+            <td class="price-col">${{ product.price }}</td>
+            <td class="quantity-col">
+              <div class="pro-qty">
+                <input disabled type="number" [value]="product.quantity" />
+              </div>
+            </td>
+            <td class="total">
+              ${{
+                (product.quantity || 0) * (product.price ? +product.price : 0)
+              }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="shopping-method">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="total-info">
+            <div class="total-table">
+              <table *ngIf="invoice$ | async as invoices">
+                <thead>
+                  <tr>
+                    <th class="total-cart">Total Cart</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="total-cart-p">
+                      ${{ calcTotal(invoice.products) }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cart Page Section End -->

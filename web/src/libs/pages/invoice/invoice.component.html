@@ -1,0 +1,54 @@
+<!-- Page Add Section Begin -->
+<section class="page-add cart-page-add">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="page-breadcrumb">
+          <h2>Invoice<span>.</span></h2>
+          <a href="#">Home</a>
+          <a href="#">Invoice</a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <img src="assets/img/add.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Page Add Section End -->
+<ng-container *ngIf="!isLoading; else elseTemplate"> </ng-container>
+<ng-template #elseTemplate>
+  <div class="w-full flex items-center justify-center h-96 max-h-full">
+    <app-loading></app-loading>
+  </div>
+</ng-template>
+
+<!-- Cart Page Section Begin -->
+<div class="cart-page" *ngIf="invoices$ | async as invoices">
+  <div class="container">
+    <div class="cart-table">
+      <table>
+        <thead>
+          <tr>
+            <th class="product-h">No</th>
+            <th>Phone</th>
+            <th>CreateAt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let invoice of invoices">
+            <td
+              [routerLink]="'/invoice/' + invoice.id"
+              class="cursor-pointer price-col"
+            >
+              {{ invoice.id }}
+            </td>
+            <td class="price-col">{{ invoice.phone }}</td>
+            <td class="price-col">{{ invoice.createAt }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Cart Page Section End -->

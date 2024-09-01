@@ -1,0 +1,47 @@
+[
+    {
+        "name": "(2-Sided Design) Simple Print Baby's Unisex One Piece Bodysuit Cotton",
+        "price": 799,
+        "category": "Baby",
+        "size": [
+            "S"
+        ],
+        "color": [
+            "#99bc20",
+            "#ffe4b7",
+            "#d5b663"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "image": "https://catkissfish-en-prod.oss-ap-southeast-1.aliyuncs.com/admin/product/66688752944-1000X1000a_new.png"
+    },
+    {
+        "name": "All-Over Print Unisex Baby Hoodie Sweatshirt with Pocket Causal Outfits",
+        "price": 799,
+        "category": "Baby",
+        "size": [
+            "S"
+        ],
+        "color": [
+            "#99bc20",
+            "#ffe4b7",
+            "#d5b663"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "image": "https://catkissfish-en-prod.oss-ap-southeast-1.aliyuncs.com/admin/product/288163712-1000X1000a_new.png"
+    },
+    {
+        "name": "(Front Design) Simple Print Baby's Unisex One Piece Bodysuit Cotton",
+        "price": 710,
+        "category": "Baby",
+        "size": [
+            "S"
+        ],
+        "color": [
+            "#99bc20",
+            "#ffe4b7",
+            "#d5b663"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        "image": "https://catkissfish-en-prod.oss-ap-southeast-1.aliyuncs.com/admin/product/31714278257-1000X1000a_new.png"
+    }
+]
